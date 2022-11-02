@@ -1,0 +1,67 @@
+﻿@model IEnumerable< MVCNHibernate.Models.Empresa>
+
+@{
+    ViewBag.Title = "Index-Empresa";
+}
+
+<div style="font-family:Arial;">
+    <h2>Index</h2>
+
+  
+
+        <input type="button" class="btn btn-primary mb-4" value="Crear" onclick="location.href='@Url.Action("Crear", "Empresa")'" />
+
+  
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model =>model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Giro)
+                    </th>
+                   
+
+                    <th>Visualizar</th>
+
+                    <th>Editar</th>
+
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Giro)
+                        </td>
+                       
+
+                        <td>
+
+                            <input type="button" class="btn btn-secondary mb-4" value="Ver" onclick="location.href='@Url.Action("Detalles", "Empresa", new { id = item.Id})'" />
+                        <td>
+                            <input type="button" class="btn btn-warning mb-4" value="Editar" onclick="location.href='@Url.Action("Editar", "Empresa", new { id = item.Id})'" />
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-danger mb-4" value="Eliminar" onclick="location.href='@Url.Action("Borrar", "Empresa", new { id = item.Id})'" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>

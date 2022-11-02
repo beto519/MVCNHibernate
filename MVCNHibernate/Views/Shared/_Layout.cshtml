@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <div class="navbar-header">
+
+                    @Html.ActionLink("Crud Hibernat", "Index", "Employee", null, new { @class = "navbar-brand" })
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @Html.ActionLink("Empresa", "Index", "Empresa", null, new { @class = "navbar-brand" })
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        @Html.ActionLink("Empleado", "Index", "Employee", null, new { @class = "navbar-brand" })
+                    </ul>
+                </div>
+            </div>
+          
+
+        </nav>
+        </header>
+
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                </footer>
+            </div>
+
+            <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
